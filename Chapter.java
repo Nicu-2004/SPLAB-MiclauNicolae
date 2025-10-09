@@ -1,12 +1,22 @@
 package splab;
+import java.util.*
+class Chapter {
+    private String name;
+    private List<SubChapter> subChapters = new ArrayList<>();
 
-public class Chapter {
-private Book book;
-private String name;
-public Chapter(Book book, String name)
-{
-	this.book=book;
-	this.name=name;
+    public Chapter(String name) {
+        this.name = name;
+    }
+
+    public SubChapter createSubChapter(String name) {
+        SubChapter sub = new SubChapter(name);
+        subChapters.add(sub);
+        return sub;
+    }
+
+    public void print() {
+        System.out.println("Chapter: " + name);
+        for (SubChapter s : subChapters) s.print();
+    }
 }
 
-}
