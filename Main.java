@@ -8,11 +8,11 @@ public class Main {
 
         Chapter chapter1 = new Chapter("Capitolul 1");
         SubChapter sub1 = chapter1.createSubChapter("Subcapitolul 1.1");
-
-        sub1.addParagraph(new Paragraph("Acesta este primul paragraf."));
-        sub1.addImage(new Image("coperta.jpg"));
-        sub1.addTable(new Table("Tabelul 1"));
-
+        Element elem1 = new Element() ;
+        elem1.addParagraph(new Paragraph("Acesta este primul paragraf."));
+        elem1.addImage(new Image("coperta.jpg"));
+        elem1.addTable(new Table("Tabelul 1"));
+        sub1.addElement(elem1);
         book.addChapter(chapter1);
 
         book.print();

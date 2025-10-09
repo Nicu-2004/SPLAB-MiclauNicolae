@@ -1,5 +1,5 @@
 package splab;
-import java.util.*
+import java.util.*;
 class Chapter {
     private String name;
     private List<SubChapter> subChapters = new ArrayList<>();

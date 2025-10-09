@@ -1,6 +1,5 @@
 package splab;
 import java.util.*;
-
  class Book {
     private String title;
     private List<Chapter> chapters = new ArrayList<>();
