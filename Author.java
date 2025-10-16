@@ -1,13 +1,15 @@
 package splab;
 import java.util.*;
-class Author {
+public class Author {
     private String name;
+    private String surname;
 
-    public Author(String name) {
+    public Author(String name, String surname) {
         this.name = name;
+        this.surname = surname;
     }
 
     public void print() {
-        System.out.println("Author: " + name);
+        System.out.println("Author: " + name + " " + surname);
     }
 }

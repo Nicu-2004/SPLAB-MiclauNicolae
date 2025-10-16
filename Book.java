@@ -1,10 +1,9 @@
 package splab;
 import java.util.*;
- class Book {
+public class Book implements Element {
     private String title;
-    private List<Chapter> chapters = new ArrayList<>();
-    private TableOfContents toc = new TableOfContents();
     private List<Author> authors = new ArrayList<>();
+    private List<Element> elements = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
@@ -14,19 +13,31 @@ import java.util.*;
         authors.add(author);
     }
 
-    public void addChapter(Chapter chapter) {
-        chapters.add(chapter);
-    }
-
+    @Override
     public void print() {
         System.out.println("Book: " + title);
-        System.out.println("\n--- Authors ---");
-        for (Author a : authors) 
-	a.print();
-        System.out.println("\n--- Table of Contents ---");
-        toc.print();
-        System.out.println("\n--- Chapters ---");
-        for (Chapter c : chapters) 
-	c.print();
+        System.out.println("Authors:");
+        for (Author a : authors) {
+            a.print();
+        }
+        System.out.println("Contents:");
+        for (Element e : elements) {
+            e.print();
+        }
+    }
+
+    @Override
+    public void add(Element element) {
+        elements.add(element);
+    }
+
+    @Override
+    public void remove(Element element) {
+        elements.remove(element);
+    }
+
+    @Override
+    public Element get(int index) {
+        return elements.get(index);
     }
 }

@@ -1,13 +1,20 @@
 package splab;
-import java.util.*;
-class Table {
-    private String title;
+public class Table implements Element {
+    private String something;
 
-    public Table(String title) {
-        this.title = title;
+    public Table(String something) {
+        this.something = something;
     }
 
+    @Override
     public void print() {
-        System.out.println("    Table: " + title);
+        System.out.println("Table: " + something);
     }
+
+    @Override
+    public void add(Element element) {}
+    @Override
+    public void remove(Element element) {}
+    @Override
+    public Element get(int index) { return null; }
 }
