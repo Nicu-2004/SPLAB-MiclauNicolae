@@ -1,10 +1,23 @@
 package splab.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
+
     private String author;
 
-    public Book() {}
+    public Book() {
+    }
 
     public Book(Long id, String title, String author) {
         this.id = id;
